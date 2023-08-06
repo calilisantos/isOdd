@@ -7,6 +7,4 @@ class OddAnalysys:
     return check_value
 
   def is_odd(integer_value):
-    if integer_value % 2 == 0:
-      return f"{integer_value} is even"
-    return f"{integer_value} is odd"
+    return f"{integer_value} is even" if integer_value % 2 == 0 else f"{integer_value} is odd"
