@@ -7,4 +7,4 @@ class TestOrchestrator(TestCase):
   @patch("src.random_generator.RandomGenerator")
   @patch("src.odd_analyses.OddAnalyses")
   def test_show_result(self, mock_odd_analyses, mock_random_generator, mock_read_values):
-    pass
+    raise NotImplementedError
