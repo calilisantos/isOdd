@@ -1,12 +1,11 @@
-from src.odd_analysis import OddAnalysys
-from src.random_generator import RandomGenerator
+from .orchestrator import Orchestrator
+import sys
 
-class Main:
-  def __init__(self):
-    self.odd_analysis = OddAnalysys()
-    self.random_generator = RandomGenerator()
+def main():
+  entry_value = sys.argv[1]
+  limit_value = sys.argv[2]
+  orchestrator = Orchestrator(entry_value, limit_value)
+  print(orchestrator.show_result())
 
-  def main(self, integer_odd_value):
-    random_number = self.random_generator.generate_random_number(integer_odd_value)
-    odd_analysis = self.odd_analysis.is_odd(random_number)
-    return odd_analysis
+if __name__ == '__main__':
+  main()

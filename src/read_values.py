@@ -1,9 +1,13 @@
-import sys
-
 class ReadValues:
-  def __init__(self):
-    self.value = sys.argv[1]
-    self.limit_value = sys.argv[2]
-  
-  def is_integer(self):
-    pass
+  @staticmethod
+  def _entry_to_integer(value):
+    if isinstance(int(value), int) is False:
+      raise ValueError('The entry value must be an integer')
+    return int(value)
+
+  @staticmethod
+  def check_entry_value(entry_value):
+    int_value = ReadValues._entry_to_integer(entry_value)
+    if int_value <= 0:
+      raise ValueError('The entry value must be greater than zero')
+    return int_value
